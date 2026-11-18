@@ -1,13 +1,14 @@
 {
   "id": "media-hud",
   "name": "Media HUD",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "ASURA OS Core Team <core@asura-os.org>",
-  "description": "Media HUD is a Asura shell plugin.",
-  "license": "MIT",
+  "description": "Wayland now-playing media controller with track progress and playback controls.",
+  "license": "GPL-3.0",
   "official": false,
   "hosts": [
-    "topbarGlyph"
+    "topbarGlyph",
+    "desktopWidget"
   ],
   "entryPoints": {
     "main": "service/Main.qml",
@@ -29,15 +30,17 @@
     "label": "Media HUD"
   },
   "dependencies": {
-    "commands": []
+    "commands": [
+      "playerctl"
+    ]
   },
   "metadata": {
     "settings": [
       {
-        "key": "showCount",
+        "key": "showArtist",
         "type": "toggle",
-        "label": "Show the tick count",
-        "group": "Media HUD",
+        "label": "Show Artist alongside Track",
+        "group": "Display",
         "default": true
       }
     ]
